@@ -1,0 +1,95 @@
+/* Reset y estructura general */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenedor principal */
+.grid-container {
+  display: grid;
+  gap: 10px;
+  flex-grow: 1; /* Hace que ocupe toda la altura disponible */
+  grid-template:
+    "header" 100px
+    "navbar" 50px
+    "main" auto
+    "sidebar" 100px
+    "footer" 100px;
+}
+
+/* Estilos generales de las secciones */
+.grid-container > * {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Header */
+.header {
+  grid-area: header;
+  background-color: #ffffff;
+  text-align: left;
+}
+
+/* Navbar */
+.navbar {
+  grid-area: navbar;
+  background-color: #ffffff;
+}
+
+/* Main */
+.main {
+  grid-area: main;
+  background-color: #ffffff;
+}
+
+/* Sidebar */
+.sidebar {
+  grid-area: sidebar;
+  background-color: #ffffff;
+}
+
+/* Footer */
+.footer {
+  grid-area: footer;
+  background-color: #222;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Diseño responsive */
+@media (min-width: 600px) {
+  .grid-container {
+    grid-template:
+      "header header" 100px
+      "navbar navbar" 70px
+      "sidebar main" auto
+      "footer footer" 100px /
+      200px auto;
+  }
+}
+
+@media (min-width: 900px) {
+  .grid-container {
+    grid-template:
+      "header header header" 100px
+      "navbar navbar navbar" 50px
+      "sidebar main main" auto
+      "footer footer footer" 100px /
+      200px auto 200px;
+  }
+}
