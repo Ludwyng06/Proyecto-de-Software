@@ -1,14 +1,10 @@
 import Link from "next/link";
+import "../styles/Navbar.css";
 
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <h1 className="navbar-title">Hotel Paradise</h1>
-      <div className="navbar-links">
-        <Link href="/">Inicio</Link>
-        <Link href="/rooms">Habitaciones</Link>
-        <Link href="/contact">Contacto</Link>
-      </div>
+      <h1 className="navbar-title">Navbar</h1>
     </nav>
   );
 };
