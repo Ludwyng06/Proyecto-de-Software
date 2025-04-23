@@ -1,35 +1,38 @@
+"use client";
 import "../styles/Header.css";
-import React from "react";
+import React, { useState } from "react";
 
 const Header = () => {
+  const [showLanguageMenu, setShowLanguageMenu] = useState(false);
+  const toggleLanguageMenu = () => setShowLanguageMenu(!showLanguageMenu);
+
   return (
     <header className="header">
-      <div className="container">
+      <div className="header-container">
         <div className="logo">
-          <img src="/logo.png" alt="Hotel Meducin Logo" />
-          <h1>Hotel Meducin</h1>
+          <strong>Hotel Meducin</strong>
+          <span className="tagline">Because your comfort is our commitment.</span>
         </div>
-
         <nav className="nav">
-          <ul>
-            <li>
-              <a href="#about">Nosotros</a>
-            </li>
-            <li>
-              <a href="#rooms">Habitaciones</a>
-            </li>
-            <li>
-              <a href="#services">Servicios</a>
-            </li>
-            <li>
-              <a href="#contact">Contacto</a>
-            </li>
-          </ul>
+          <div
+            className="language-selector"
+            onClick={toggleLanguageMenu}
+            onBlur={() => setTimeout(() => setShowLanguageMenu(false), 100)}
+            tabIndex={0}
+          >
+            <span className="language-label">Idioma</span>
+            <span className="lang">Español ▾</span>
+            {showLanguageMenu && (
+              <div className="language-dropdown">
+                <div className="language-option">Español</div>
+                <div className="language-option">English</div>
+              </div>
+            )}
+          </div>
+          <a href="#">Encontrar estadía <span className="calendar-icon">📅</span></a>
+          <a href="#">Inscríbase</a>
+          <a href="#" className="login-link">Inicie sesión 👤</a>
         </nav>
-
-        <a href="#book" className="btn-reserve">
-          Reservar Ahora
-        </a>
       </div>
     </header>
   );

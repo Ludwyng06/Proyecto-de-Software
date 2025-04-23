@@ -6,7 +6,6 @@ import { rooms } from "./utils/data";
 import "./styles/globals.css"; // Asegúrate de importar estilos si usas CSS puro.
 import Header from "./components/Header";
 import { Main } from "next/document";
-import SideBar from "./components/SideBar";
 import MainComponent from "./components/Main";
 
 export default function Home() {
@@ -15,7 +14,6 @@ export default function Home() {
       <Header />
       <Navbar />
       <MainComponent />
-      <SideBar />
       <Footer />
     </main>
   );
