@@ -1,4 +1,6 @@
+"use client";
 import "../styles/Main.css";
+import Link from "next/link";
 
 const Main = () => {
   return (
@@ -18,35 +20,50 @@ const Main = () => {
         <div className="texto-promocional">
           <h2>¿Sueña con los días más cálidos? Su estadía comienza aquí.</h2>
           <p>
-            Su escapada en climas cálidos está más cerca de lo que cree. Los días soleados, la vista a la piscina y los momentos inolvidables lo esperan con Hilton.
+            Su escapada en climas cálidos está más cerca de lo que cree. Los
+            días soleados, la vista a la piscina y los momentos inolvidables lo
+            esperan con Meducin.
           </p>
         </div>
 
-        <a href="/rooms" className="btn-reserva">
+        <Link href="/reservations" className="btn-reserva">
           Reserva Ahora
-        </a>
+        </Link>
       </section>
 
       {/* Nueva sección de destinos */}
       <section className="destinos">
         <h2>Descubra un lugar nuevo</h2>
         <p className="destinos-subtitulo">
-          Eche un vistazo a nuestros principales destinos y emprenda una nueva aventura.
+          Eche un vistazo a nuestros principales destinos y emprenda una nueva
+          aventura.
         </p>
 
         <div className="destinos-grid">
           <div className="destino-card">
-            <img src="/images/Cancun.jpg" alt="Cancún" className="destino-img" />
+            <img
+              src="/images/Cancun.jpg"
+              alt="Cancún"
+              className="destino-img"
+            />
             <h3>Cancún</h3>
           </div>
 
           <div className="destino-card">
-            <img src="/images/Cartagena.jpg" alt="Cartagena" className="destino-img" />
+            <img
+              src="/images/Cartagena.jpg"
+              alt="Cartagena"
+              className="destino-img"
+            />
             <h3>Cartagena</h3>
           </div>
 
           <div className="destino-card">
-            <img src="/images/Las vegas.jpg" alt="Las Vegas" className="destino-img" />
+            <img
+              src="/images/Las vegas.jpg"
+              alt="Las Vegas"
+              className="destino-img"
+            />
             <h3>Las Vegas</h3>
           </div>
 
@@ -68,11 +85,16 @@ const Main = () => {
         </div>
         <div className="feature-card">
           <h2>Spa & Bienestar</h2>
-          <p>Relájate con nuestros tratamientos de spa y servicios de bienestar.</p>
+          <p>
+            Relájate con nuestros tratamientos de spa y servicios de bienestar.
+          </p>
         </div>
         <div className="feature-card">
           <h2>Gastronomía Gourmet</h2>
-          <p>Disfruta de una experiencia culinaria única en nuestros restaurantes.</p>
+          <p>
+            Disfruta de una experiencia culinaria única en nuestros
+            restaurantes.
+          </p>
         </div>
       </section>
     </main>

@@ -1,34 +1,28 @@
-
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html,
-body {
+html, body {
   height: 100%;
 }
 
 body {
   font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
+  margin: 0;
 }
 
-
+/* Solución correcta aquí ↓ */
 .grid-container {
   display: grid;
-  flex-grow: 1; 
+  min-height: 100vh; /* ← Esto garantiza que ocupa toda la pantalla */
   grid-template:
     "header" 100px
     "navbar" 50px
-    "main" auto
-    "sidebar" 100px
+    "main" 1fr
     "footer" 100px;
 }
-
 
 .grid-container > * {
   box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
@@ -37,29 +31,26 @@ body {
   text-align: center;
 }
 
-
 .header {
   grid-area: header;
   background-color: #ffffff;
   text-align: left;
 }
 
-
 .navbar {
   grid-area: navbar;
   background-color: #ffffff;
 }
-
 
 .main {
   grid-area: main;
   background-color: #ffffff;
 }
 
-
 .footer {
   grid-area: footer;
   background-color: #000000;
+  color: #ffffff;
   padding: 20px 0;
   text-align: center;
 }
@@ -70,7 +61,7 @@ body {
     grid-template:
       "header header" 100px
       "navbar navbar" 70px
-      "main main" auto
+      "main main" 1fr
       "footer footer" 100px /
       200px auto;
   }
@@ -80,8 +71,8 @@ body {
   .grid-container {
     grid-template:
       "header header header" 100px
-      "navbar navbar navbar" 50px
-      "main main main" auto
+      "navbar navbar navbar" 70px
+      "main main main" 1fr
       "footer footer footer" 100px /
       200px auto 200px;
   }

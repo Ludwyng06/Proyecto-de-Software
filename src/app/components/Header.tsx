@@ -1,6 +1,7 @@
 "use client";
 import "../styles/Header.css";
 import React, { useState } from "react";
+import Link from "next/link";
 
 const Header = () => {
   const [showLanguageMenu, setShowLanguageMenu] = useState(false);
@@ -9,10 +10,14 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-container">
-        <div className="logo">
+        
+      <Link href="/" style={{ textDecoration: "none" }}>
+          <div className="logo" style={{ cursor: "pointer" }}>
           <strong>Hotel Meducin</strong>
           <span className="tagline">Because your comfort is our commitment.</span>
         </div>
+      </Link>
+
         <nav className="nav">
           <div
             className="language-selector"
@@ -31,7 +36,7 @@ const Header = () => {
           </div>
           <a href="#">Encontrar estadía <span className="calendar-icon">📅</span></a>
           <a href="#">Inscríbase</a>
-          <a href="#" className="login-link">Inicie sesión 👤</a>
+          <a href="/login" className="login-link">Inicie sesión 👤</a>
         </nav>
       </div>
     </header>

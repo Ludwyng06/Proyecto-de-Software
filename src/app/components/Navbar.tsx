@@ -4,20 +4,20 @@ import "../styles/Navbar.css";
 
 const menuItems = [
   {
-    title: "Hoteles y resorts",
-    submenu: ["Hilton Garden Inn", "Waldorf Astoria", "DoubleTree"],
+    title: "Servicios del Hotel",
+    submenu: ["Spa & Bienestar", "Restaurantes", "Piscina y Gimnasio"],
   },
   {
-    title: "Hilton Honors",
-    submenu: ["Unirse", "Ver puntos", "Beneficios"],
+    title: "Experiencias",
+    submenu: ["Tours Locales", "Eventos Especiales", "Actividades al Aire Libre"],
   },
   {
-    title: "Reuniones y eventos",
-    submenu: ["Reservar evento", "Espacios", "Solicitar cotización"],
+    title: "Reservaciones",
+    submenu: ["Buscar habitación", "Paquetes promocionales", "Solicitar cotización"],
   },
   {
-    title: "Hilton for Business",
-    submenu: ["Soluciones", "Afiliaciones", "Contacto"],
+    title: "Contacto y Ayuda",
+    submenu: ["Contáctanos", "Preguntas Frecuentes", "Soporte al Cliente"],
   },
 ];
 
