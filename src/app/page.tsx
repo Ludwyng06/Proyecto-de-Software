@@ -11,10 +11,8 @@ import MainComponent from "./components/Main";
 export default function Home() {
   return (
     <main className="grid-container">
-      <Header />
       <Navbar />
       <MainComponent />
-      <Footer />
     </main>
   );
 }

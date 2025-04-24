@@ -31,7 +31,7 @@ const Header = () => {
           </div>
           <a href="#">Encontrar estadía <span className="calendar-icon">📅</span></a>
           <a href="#">Inscríbase</a>
-          <a href="#" className="login-link">Inicie sesión 👤</a>
+          <a href="/login" className="login-link">Inicie sesión 👤</a>
         </nav>
       </div>
     </header>
