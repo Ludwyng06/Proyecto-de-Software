@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏨 Hotel Meducin - Sitio Web
 
-## Getting Started
+Sitio web moderno para el **Hotel Meducin**, diseñado para ofrecer una experiencia visual atractiva y funcional tanto para visitantes como para administradores. Presenta secciones informativas, galería de habitaciones, formularios de contacto y una interfaz clara para reservas.
 
-First, run the development server:
+---
+
+## 🚀 Inicio Rápido
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[!NOTE¡] El proyecto se inicia con npm run dev, lo que arranca un servidor de desarrollo local (por defecto en http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+structura Principal
+pages/ → Contiene las páginas del sitio como:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+index.tsx: Página de inicio
 
-## Learn More
+about.tsx: Página Sobre Nosotros
 
-To learn more about Next.js, take a look at the following resources:
+rooms.tsx: Lista de habitaciones con fotos y descripciones
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+reservations.tsx: Formulario de reserva
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+styles/ → Archivos CSS personalizados (como pages.css)
 
-## Deploy on Vercel
+public/images/ → Almacena las imágenes usadas en el sitio (habitaciones, login, fachada, etc.)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[!TIP] Puedes agregar nuevas imágenes en public/images/ y referenciarlas directamente con rutas como /images/nombre.jpg.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+✨ Características
+Diseño responsive (adaptado a dispositivos móviles)
+
+Galería visual de habitaciones
+
+Sistema de navegación entre secciones
+
+Formulario de reservas funcional
+
+Estilizado moderno con CSS personalizado
+
+📸 Captura de Imagen
+<img src="/images/login.jpg" alt="Vista del Lobby" />
+[!IMPORTANT] Asegúrate de que todas las imágenes estén dentro del directorio public/images/ para que Next.js pueda servirlas correctamente.
+
+
+✅ Próximas mejoras
+Conexión con base de datos para guardar reservas
+
+Autenticación de usuarios (admin)
+
+Panel administrativo para gestión de habitaciones
+
+📬 Contacto
+Si deseas contribuir, sugerir una mejora o simplemente dar feedback, ¡eres bienvenido/a! 😄
