@@ -1,17 +1,10 @@
 /* Footer.css */
 
 .footer {
-
   background-color: #000;
   color: #fff;
   padding: 2rem 1rem;
   margin-top: auto;
-
-  /* Ya está en globals.css */
-  color: white; /* Ya está en globals.css */
-  padding: 20px 0; /* Ya está en globals.css */
-  text-align: center; /* Ya está en globals.css */
-
 }
 
 .footer-container {
