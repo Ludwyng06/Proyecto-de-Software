@@ -1,3 +1,27 @@
+/* =====================
+   Paleta y tipografía
+   ===================== */
+:root {
+  --color-primary: #002d62;
+  --color-primary-light: #3182ce;
+  --color-primary-dark: #004080;
+  --color-accent: #38a169;
+  --color-accent-dark: #22543d;
+  --color-danger: #c0392b;
+  --color-bg: #f7fafc;
+  --color-surface: #fff;
+  --color-border: #e2e8f0;
+  --color-text: #222;
+  --color-text-light: #4a5568;
+  --color-muted: #718096;
+  --color-table-header: #f7fafc;
+  --color-table-row-alt: #f9fafb;
+  --color-footer-bg: #000;
+  --color-footer-text: #fff;
+  --font-main: var(--font-geist-sans, 'Segoe UI', Arial, sans-serif);
+  --font-mono: var(--font-geist-mono, 'Fira Mono', monospace);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,46 +33,60 @@ html, body {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: var(--font-main);
+  background: var(--color-bg);
+  color: var(--color-text);
   margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Solución correcta aquí ↓ */
-.grid-container {
+.layout-wrapper {
   display: grid;
-  min-height: 100vh; /* ← Esto garantiza que ocupa toda la pantalla */
+  min-height: 100vh;
   grid-template:
-    "header" 100px
+    "header" 90px
     "navbar" 50px
     "main" 1fr
     "footer" 100px;
 }
 
-.grid-container > * {
-  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
-  border-radius: 4px;
-  padding: 10px;
-  text-align: center;
+.layout-wrapper > .header {
+  grid-area: header;
+}
+.layout-wrapper > .navbar {
+  grid-area: navbar;
+}
+.layout-wrapper > .main-content {
+  grid-area: main;
+}
+.layout-wrapper > .footer {
+  grid-area: footer;
+}
+
+.layout-wrapper > * {
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
 }
 
 .header {
-  grid-area: header;
   background-color: #ffffff;
   text-align: left;
 }
 
 .navbar {
-  grid-area: navbar;
   background-color: #ffffff;
 }
 
 .main {
-  grid-area: main;
   background-color: #ffffff;
 }
 
 .footer {
-  grid-area: footer;
   background-color: #000000;
   color: #ffffff;
   padding: 20px 0;
@@ -57,9 +95,9 @@ body {
 
 /* Diseño responsive */
 @media (min-width: 600px) {
-  .grid-container {
+  .layout-wrapper {
     grid-template:
-      "header header" 100px
+      "header header" 90px
       "navbar navbar" 70px
       "main main" 1fr
       "footer footer" 100px /
@@ -68,12 +106,16 @@ body {
 }
 
 @media (min-width: 900px) {
-  .grid-container {
+  .layout-wrapper {
     grid-template:
-      "header header header" 100px
+      "header header header" 90px
       "navbar navbar navbar" 70px
       "main main main" 1fr
       "footer footer footer" 100px /
       200px auto 200px;
   }
 }
+
+/* Eliminar grid-container y paddings innecesarios */
+.grid-container { display: block; padding: 0; box-shadow: none; border-radius: 0; }
+.grid-container > * { box-shadow: none; border-radius: 0; padding: 0; }

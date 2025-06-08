@@ -1,17 +1,19 @@
 .header {
-  background-color: #ffffff;
-  color: #333333;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  box-shadow: 0 1px 0 0 rgba(0,0,0,0.04);
   padding: 0 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80px;
+  height: 90px;
   position: sticky;
   top: 0;
   z-index: 1000;
   margin-bottom: 0;
   padding-bottom: 0;
+  border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-main);
 }
 
 .header-container {
@@ -26,14 +28,14 @@
   display: flex;
   flex-direction: column;
   font-size: 1.7rem;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: var(--font-main);
   font-weight: bold;
-  color: #000000;
+  color: var(--color-primary);
 }
 
 .tagline {
   font-size: 0.85rem;
-  color: #777777;
+  color: var(--color-muted);
 }
 
 .nav {
@@ -46,19 +48,20 @@
 
 .nav a,
 .language-selector {
-  color: #333333;
+  color: var(--color-text);
   text-decoration: none;
   font-size: 1rem;
   padding: 0.75rem 1rem;
   cursor: pointer;
   position: relative;
   transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: var(--font-main);
 }
 
 .nav a:hover,
 .language-selector:hover {
-  background-color: #f2f2f2;
-  color: #002d62;
+  background-color: var(--color-table-header);
+  color: var(--color-primary-dark);
 }
 
 .nav a::after,
@@ -69,7 +72,7 @@
   left: 0;
   height: 3px;
   width: 0%;
-  background-color: #002d62;
+  background-color: var(--color-primary-dark);
   transition: width 0.3s ease;
 }
 
@@ -97,9 +100,9 @@
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
-  background-color: #ffffff;
-  color: #333333;
-  border: 1px solid #ddd;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   z-index: 200;
@@ -114,7 +117,7 @@
 }
 
 .language-option:hover {
-  background-color: #f2f2f2;
+  background-color: var(--color-table-header);
 }
 
 .lang {
@@ -122,7 +125,7 @@
 }
 
 .login-link {
-  color: #333333;
+  color: var(--color-primary);
 }
 
 @keyframes fadeIn {

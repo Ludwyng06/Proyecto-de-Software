@@ -1,0 +1,66 @@
+.room-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--color-surface);
+  box-shadow: 0 2px 4px rgba(0, 45, 98, 0.08);
+  transition: transform 0.2s ease-in-out;
+  margin: 1rem;
+  width: 300px;
+  font-family: var(--font-main);
+}
+
+.room-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.room-card-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.room-card-content {
+  padding: 1.5rem;
+}
+
+.room-card-title {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  font-family: var(--font-main);
+}
+
+.room-card-description {
+  margin: 0.5rem 0;
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
+
+.room-card-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.room-card-price span {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--color-primary-dark);
+}
+
+.book-button {
+  background-color: var(--color-accent);
+  color: var(--color-surface);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-family: var(--font-main);
+}
+
+.book-button:hover {
+  background-color: var(--color-accent-dark);
+} 

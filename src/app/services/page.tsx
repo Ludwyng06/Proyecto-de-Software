@@ -8,26 +8,39 @@ export default function ServicesPage() {
           En Hotel Meducin, nos esforzamos por ofrecer servicios integrales para que tu estancia sea perfecta.
         </p>
   
-        <div className="service-list">
-          <h2>Spa & Wellness</h2>
-          <p>Masajes relajantes, tratamientos faciales, jacuzzi y más.</p>
-          <p><em>(Imagen sugerida: sala de masajes, sauna o jacuzzi)</em></p>
+        <div className="service-list" style={{display: 'flex', flexDirection: 'column', gap: '3rem'}}>
+          <div style={{display: 'flex', alignItems: 'center', gap: '2.5rem', flexWrap: 'wrap'}}>
+            <img src="/images/spa y bienestar.jpg" alt="Spa & Wellness" style={{width: '420px', maxWidth: '100%', borderRadius: '1.2rem', boxShadow: '0 4px 24px rgba(0,40,104,0.13)'}} />
+            <div>
+              <h2 style={{color: '#002868', fontSize: '2rem', marginBottom: '0.7rem'}}>Spa & Wellness</h2>
+              <p style={{fontSize: '1.18rem', color: '#222'}}>Masajes relajantes, tratamientos faciales, jacuzzi y más.<br/>Vive una experiencia de relajación total en nuestro spa de lujo.</p>
+            </div>
+          </div>
   
-          <h2>Restaurante "Sabor Meducin"</h2>
-          <p>Menú internacional con ingredientes frescos y opción de menú vegetariano/vegano.</p>
-          <p><em>(Imagen sugerida: plato gourmet o comedor con vista)</em></p>
+          <div style={{display: 'flex', alignItems: 'center', gap: '2.5rem', flexWrap: 'wrap', flexDirection: 'row-reverse'}}>
+            <img src="/images/restaurante.jpg" alt="Restaurante Sabor Meducin" style={{width: '420px', maxWidth: '100%', borderRadius: '1.2rem', boxShadow: '0 4px 24px rgba(0,40,104,0.13)'}} />
+            <div>
+              <h2 style={{color: '#002868', fontSize: '2rem', marginBottom: '0.7rem'}}>Restaurante "Sabor Meducin"</h2>
+              <p style={{fontSize: '1.18rem', color: '#222'}}>Menú internacional con ingredientes frescos y opción de menú vegetariano/vegano.<br/>Disfruta de una experiencia gastronómica única.</p>
+            </div>
+          </div>
   
-          <h2>Piscina y Terraza</h2>
-          <p>Perfectas para relajarte, leer o disfrutar del atardecer.</p>
-  
-          <h2>Gimnasio</h2>
-          <p>Equipado con máquinas de cardio, pesas y zona de yoga.</p>
-  
-          <h2>Centro de Negocios</h2>
-          <p>Computadoras, impresora, Wi-Fi y espacio coworking 24/7.</p>
-  
-          <h2>Salones para Eventos</h2>
-          <p>Reuniones corporativas, bodas y eventos sociales.</p>
+          <div style={{marginTop: '2rem'}}>
+            <h2 style={{color: '#002868', fontSize: '2rem', marginBottom: '0.7rem'}}>Piscina y Terraza</h2>
+            <p style={{fontSize: '1.18rem', color: '#222'}}>Perfectas para relajarte, leer o disfrutar del atardecer.</p>
+          </div>
+          <div>
+            <h2 style={{color: '#002868', fontSize: '2rem', marginBottom: '0.7rem'}}>Gimnasio</h2>
+            <p style={{fontSize: '1.18rem', color: '#222'}}>Equipado con máquinas de cardio, pesas y zona de yoga.</p>
+          </div>
+          <div>
+            <h2 style={{color: '#002868', fontSize: '2rem', marginBottom: '0.7rem'}}>Centro de Negocios</h2>
+            <p style={{fontSize: '1.18rem', color: '#222'}}>Computadoras, impresora, Wi-Fi y espacio coworking 24/7.</p>
+          </div>
+          <div>
+            <h2 style={{color: '#002868', fontSize: '2rem', marginBottom: '0.7rem'}}>Salones para Eventos</h2>
+            <p style={{fontSize: '1.18rem', color: '#222'}}>Reuniones corporativas, bodas y eventos sociales.</p>
+          </div>
         </div>
       </section>
     );

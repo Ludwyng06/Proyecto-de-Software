@@ -6,16 +6,18 @@ import { ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import Header from "./Header";
 import Footer from "./Footer";
+import Navbar from "./Navbar";
 
 export default function LayoutWrapper({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const hide = pathname === "/login" || pathname === "/register";
 
   return (
-    <>
+    <div className="layout-wrapper">
       {!hide && <Header />}
-      {children}
+      {!hide && <Navbar />}
+      <div className="main-content">{children}</div>
       {!hide && <Footer />}
-    </>
+    </div>
   );
 }

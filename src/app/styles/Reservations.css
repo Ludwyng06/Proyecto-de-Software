@@ -1,118 +1,646 @@
+/* Estilos generales de reservaciones */
 .main-reservas {
-    padding: 2rem;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f9f9f9;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: var(--font-main);
+}
+
+.hero-reservas {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero-reservas h1 {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-main);
+}
+
+.hero-reservas p {
+  color: var(--color-text-light);
+  font-size: 1.2rem;
+}
+
+/* Tarjetas de habitaciones */
+.reservas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.reserva-card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 45, 98, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--color-surface);
+}
+
+.reserva-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.reserva-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.reserva-content {
+  padding: 1.5rem;
+}
+
+.reserva-content h2 {
+  color: var(--color-primary-dark);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-main);
+}
+
+.reserva-desc {
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.reserva-precio {
+  font-weight: bold;
+  color: var(--color-primary-dark);
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.btn-reserva {
+  display: inline-block;
+  background-color: var(--color-primary-light);
+  color: var(--color-surface);
+  padding: 0.7rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  font-family: var(--font-main);
+}
+
+.btn-reserva:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Sección de beneficios */
+.reserva-beneficios {
+  background-color: var(--color-bg);
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.reserva-beneficios h2 {
+  text-align: center;
+  color: var(--color-primary-dark);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-family: var(--font-main);
+}
+
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.beneficio-card {
+  background-color: var(--color-surface);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 45, 98, 0.05);
+}
+
+.beneficio-card h3 {
+  color: var(--color-primary-dark);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.beneficio-card p {
+  color: var(--color-text-light);
+  line-height: 1.5;
+}
+
+/* Página de formulario de reserva */
+.reservation-form-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--color-surface);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 45, 98, 0.08);
+  font-family: var(--font-main);
+}
+
+.back-button {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: var(--color-primary-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+.room-description {
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.room-price {
+  font-weight: bold;
+  color: var(--color-primary-dark);
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.reservation-error, .availability-error {
+  background-color: #fed7d7;
+  color: var(--color-danger);
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.availability-success {
+  background-color: #c6f6d5;
+  color: var(--color-accent-dark);
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.reservation-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  color: var(--color-text-light);
+  font-weight: 500;
+  font-family: var(--font-main);
+}
+
+.form-control {
+  padding: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: var(--font-main);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-primary-light);
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.check-availability-btn,
+.submit-reservation-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.check-availability-btn {
+  background-color: var(--color-primary-light);
+  color: var(--color-surface);
+  font-family: var(--font-main);
+}
+
+.check-availability-btn:hover:not(:disabled) {
+  background-color: var(--color-primary-dark);
+}
+
+.submit-reservation-btn {
+  background-color: var(--color-accent);
+  color: var(--color-surface);
+  font-family: var(--font-main);
+}
+
+.submit-reservation-btn:hover:not(:disabled) {
+  background-color: var(--color-accent-dark);
+}
+
+.check-availability-btn:disabled,
+.submit-reservation-btn:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+/* Página de confirmación */
+.confirmation-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.confirmation-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-header {
+  background-color: #48bb78;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.confirmation-header h1 {
+  margin-top: 1rem;
+  font-size: 2rem;
+  color: var(--color-primary-dark);
+  font-family: var(--font-main);
+}
+
+.confirmation-details {
+  padding: 2rem;
+}
+
+.confirmation-id {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.confirmation-message {
+  color: #4a5568;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.confirmation-summary {
+  background-color: #f7fafc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.confirmation-summary h3 {
+  color: var(--color-primary-dark);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  color: #4a5568;
+}
+
+.confirmation-instructions {
+  margin-bottom: 2rem;
+}
+
+.confirmation-instructions h3 {
+  color: #2d3748;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.confirmation-instructions ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+.confirmation-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 2rem 2rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-primary-light);
+  color: var(--color-surface);
+  font-family: var(--font-main);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+  background-color: var(--color-muted);
+  color: var(--color-surface);
+  font-family: var(--font-main);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-text-light);
+}
+
+.confirmation-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  text-align: center;
+}
+
+.loading-spinner {
+  margin-top: 2rem;
+  width: 50px;
+  height: 50px;
+  border: 5px solid #e2e8f0;
+  border-top: 5px solid #3182ce;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Animación de la marca de verificación */
+.checkmark {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+.checkmark-circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke: #fff;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark-check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  stroke-width: 3;
+  stroke: #fff;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
   }
-  
-  .hero-reservas {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-  
-  .hero-reservas h1 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-  }
-  
-  .hero-reservas p {
-    font-size: 1.2rem;
-    color: #7f8c8d;
-  }
-  
+}
+
+/* Responsive */
+@media (max-width: 768px) {
   .reservas-grid {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    margin-bottom: 4rem;
+    grid-template-columns: 1fr;
   }
-  
-  .reserva-card {
-    background-color: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-  }
-  
-  .reserva-card:hover {
-    transform: scale(1.02);
-  }
-  
-  .reserva-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .reserva-content {
-    padding: 1.5rem;
-  }
-  
-  .reserva-content h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #2c3e50;
-  }
-  
-  .reserva-desc {
-    color: #7f8c8d;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .reserva-precio {
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    color: #27ae60;
-  }
-  
-  .btn-reserva {
-    display: inline-block;
-    background-color: #2980b9;
-    color: white;
-    text-align: center;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-reserva:hover {
-    background-color: #1c5980;
-  }
-  
-  .reserva-beneficios {
-    text-align: center;
-  }
-  
-  .reserva-beneficios h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #34495e;
-  }
-  
+
   .beneficios-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
+    grid-template-columns: 1fr;
   }
-  
-  .beneficio-card {
-    background-color: white;
-    border-radius: 12px;
-    padding: 1.5rem;
-    width: 280px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+
+  .confirmation-actions {
+    flex-direction: column;
   }
-  
-  .beneficio-card h3 {
-    color: #2c3e50;
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
     margin-bottom: 0.5rem;
   }
-  
-  .beneficio-card p {
-    color: #7f8c8d;
+}
+
+.required {
+  color: #e53e3e;
+  margin-left: 0.2em;
+  font-weight: bold;
+}
+.form-control.error {
+  border: 1.5px solid #e53e3e;
+  background: #fff5f5;
+}
+.pending {
+  color: #a0aec0;
+  font-style: italic;
+}
+.reservation-summary {
+  background: #f7fafc;
+  border-radius: 6px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(44,82,130,0.06);
+}
+.reservation-summary h3 {
+  color: #2c5282;
+  margin-bottom: 0.7rem;
+  font-size: 1.1rem;
+}
+.reservation-summary ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.reservation-summary li {
+  margin-bottom: 0.3rem;
+  color: #2d3748;
+}
+.form-loader {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  color: #2c5282;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.loading-spinner {
+  border: 3px solid #e2e8f0;
+  border-top: 3px solid #3182ce;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@media (max-width: 600px) {
+  .reservation-form-container {
+    padding: 1rem;
   }
+  .reservation-summary {
+    padding: 0.7rem 0.5rem;
+  }
+}
+
+.booked-day {
+  background-color: #fed7d7 !important;
+  color: #c53030 !important;
+  border-radius: 50% !important;
+}
+.free-day {
+  background-color: #c6f6d5 !important;
+  color: #22543d !important;
+  border-radius: 50% !important;
+}
+
+.reservation-list-search-bar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.reservation-list-table-wrapper {
+  overflow-x: auto;
+  margin-top: 1.5rem;
+}
+
+.reservations-table {
+  width: 100%;
+  min-width: 900px;
+  background: var(--color-surface);
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(44,82,130,0.10);
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: var(--font-main);
+}
+
+.reservations-table thead {
+  background: var(--color-table-header);
+}
+
+.reservations-table th {
+  padding: 1.1em 0.7em;
+  font-size: 1.1em;
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  background: var(--color-table-header);
+}
+
+.reservations-table td {
+  padding: 1em 0.7em;
+  font-family: var(--font-main);
+}
+
+.reservations-table .reservation-status {
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.reservations-table .row-alt {
+  background: var(--color-table-row-alt);
+}
+
+.reservation-list-loading,
+.reservation-list-empty {
+  padding: 1.5em;
+  text-align: center;
+  color: var(--color-muted);
+}
+
+.reservation-action-btn {
+  border: none;
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(44,82,130,0.08);
+  font-size: 1.2rem;
+  transition: background 0.2s, color 0.2s;
+}
+.reservation-action-btn.edit {
+  background: var(--color-accent);
+  color: var(--color-surface);
+}
+.reservation-action-btn.edit:hover {
+  background: var(--color-accent-dark);
+}
+.reservation-action-btn.delete {
+  background: var(--color-danger);
+  color: var(--color-surface);
+}
+.reservation-action-btn.delete:hover {
+  background: #a93226;
+}
+.reservation-action-btn.view {
+  background: var(--color-primary-light);
+  color: var(--color-surface);
+}
+.reservation-action-btn.view:hover {
+  background: var(--color-primary-dark);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.35em 1em;
+  border-radius: 1em;
+  font-size: 0.95em;
+  font-weight: 600;
+  color: #fff;
+  margin-right: 0.2em;
+  letter-spacing: 0.02em;
+}
+.badge-completed {
+  background: #38a169;
+}
+.badge-expired {
+  background: #a0aec0;
+}
+.badge-cancelled {
+  background: #c0392b;
+}
+.badge-pending {
+  background: #f6ad55;
+  color: #222;
+}
+.badge-confirmed {
+  background: #3182ce;
+}
   

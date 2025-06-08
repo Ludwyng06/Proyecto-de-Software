@@ -10,12 +10,12 @@
   padding: 1rem;
 }
 
-.register-container::before {
-  content: "";
-  position: absolute;
+.register-overlay {
+  position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 0;
+  pointer-events: none;
 }
 
 .register-card {
@@ -111,21 +111,38 @@
 .register-footer a:hover {
   text-decoration: underline;
 }
+
 .close-button {
-  position: absolute;
+  position: fixed;
   top: 1.5rem;
   right: 2rem;
   font-size: 1.5rem;
   text-decoration: none;
   color: #fff;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.7);
   padding: 0.3rem 0.7rem;
   border-radius: 50%;
   cursor: pointer;
-  transition: background 0.3s;
-  z-index: 2;
+  transition: background 0.3s, color 0.3s;
+  z-index: 3;
+  outline: 2px solid #fff;
 }
 
-.close-button:hover {
-  background: rgba(0, 0, 0, 0.7);
+.close-button:hover, .close-button:focus {
+  background: #fff;
+  color: #002d62;
+  outline: 2px solid #002d62;
+}
+
+@media (max-width: 600px) {
+  .register-card {
+    padding: 1.5rem 0.5rem;
+    max-width: 95vw;
+  }
+  .close-button {
+    top: 0.7rem;
+    right: 1rem;
+    font-size: 1.2rem;
+    padding: 0.2rem 0.5rem;
+  }
 }

@@ -1,10 +1,11 @@
 /* Footer.css */
 .footer {
-  background-color: #000;
-  color: #fff;
+  background-color: var(--color-footer-bg);
+  color: var(--color-footer-text);
   padding: 2rem 1rem;
   text-align: center;
   margin-top: auto;
+  font-family: var(--font-main);
 }
 
 .footer-container {
@@ -29,7 +30,8 @@
 .footer-section h2 {
   margin-bottom: 1rem;
   font-size: 1.2rem;
-  color: #fff;
+  color: var(--color-footer-text);
+  font-family: var(--font-main);
 }
 
 .footer-section ul {
@@ -44,10 +46,12 @@
 .footer-section a {
   color: #ccc;
   text-decoration: none;
+  font-family: var(--font-main);
 }
 
 .footer-section a:hover {
   text-decoration: underline;
+  color: var(--color-accent);
 }
 
 .social-links a {
@@ -61,4 +65,6 @@
   font-size: 0.875rem;
   border-top: 1px solid #444;
   margin-top: 2rem;
+  color: #bbb;
+  font-family: var(--font-main);
 }

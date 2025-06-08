@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import "../styles/Navbar.css";
+import Link from "next/link";
 
 const menuItems = [
   {
@@ -17,12 +18,17 @@ const menuItems = [
   },
   {
     title: "Contacto y Ayuda",
-    submenu: ["Contáctanos", "Preguntas Frecuentes", "Soporte al Cliente"],
+    submenu: ["Contáctanos", "Preguntas Frecuentes"],
   },
 ];
 
 const Navbar = () => {
-  const [activeMenu, setActiveMenu] = useState(null);
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+
+  // Prueba de Sentry en Navbar
+  if (typeof window !== "undefined" && window.location.search.includes("sentryTest=navbar")) {
+    throw new Error("Prueba de error Sentry en Navbar");
+  }
 
   return (
     <div className="navbar">
@@ -45,9 +51,13 @@ const Navbar = () => {
               {activeMenu === item.title && (
                 <div className="dropdown-menu">
                   {item.submenu.map((subitem) => (
-                    <div className="dropdown-item" key={subitem}>
+                    <Link
+                      href={`/${item.title.toLowerCase().replace(/\s/g, "-")}/${subitem.toLowerCase().replace(/\s/g, "-").replace(/&/g, "y").replace(/á/g, "a").replace(/é/g, "e").replace(/í/g, "i").replace(/ó/g, "o").replace(/ú/g, "u").replace(/ñ/g, "n")}`}
+                      className="dropdown-item"
+                      key={subitem}
+                    >
                       {subitem}
-                    </div>
+                    </Link>
                   ))}
                 </div>
               )}

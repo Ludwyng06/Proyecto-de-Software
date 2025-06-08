@@ -1,8 +1,18 @@
 'use client';
 import "../styles/Reservations.css";
 import Link from "next/link";
+import { useEffect, useState } from 'react';
+import { reservationService } from '../services';
+import { useRouter } from 'next/navigation';
+import ReservationList from '../components/ReservationList';
 
 export default function ReservasPage() {
+  const [reservas, setReservas] = useState([]);
+  const [search, setSearch] = useState('');
+  const [searchDate, setSearchDate] = useState('');
+  const [loading, setLoading] = useState(true);
+  const router = useRouter();
+
   const habitaciones = [
     {
       id: 1,
@@ -27,13 +37,32 @@ export default function ReservasPage() {
     }
   ];
 
+  useEffect(() => {
+    setLoading(true);
+    reservationService.getUserReservations()
+      .then(setReservas)
+      .finally(() => setLoading(false));
+  }, []);
+
+  const handleDelete = async (id) => {
+    setLoading(true);
+    await reservationService.cancelReservation(id);
+    setReservas(reservas.filter(r => r.id !== id));
+    setLoading(false);
+  };
+
+  const filtered = reservas.filter(r => {
+    const matchNombre = r.room?.name?.toLowerCase().includes(search.toLowerCase());
+    const matchFecha = searchDate ? r.checkInDate?.slice(0,10) === searchDate : true;
+    return matchNombre && matchFecha;
+  });
+
   return (
     <main className="main-reservas">
-      <section className="hero-reservas">
-        <h1>Reserve su experiencia Meducin</h1>
-        <p>Seleccione entre nuestras exclusivas opciones de alojamiento</p>
+      <section style={{marginBottom:'2.5rem'}}>
+        <h2 style={{marginBottom:'1rem'}}>Mis Reservas</h2>
+        <ReservationList reservas={reservas} loading={loading} onDelete={handleDelete} />
       </section>
-
       <section className="reservas-grid">
         {habitaciones.map((habitacion) => (
           <div key={habitacion.id} className="reserva-card">
@@ -46,9 +75,9 @@ export default function ReservasPage() {
               <h2>{habitacion.nombre}</h2>
               <p className="reserva-desc">{habitacion.descripcion}</p>
               <p className="reserva-precio">Desde ${habitacion.precio}/noche</p>
-              <Link href={`/reservas/formulario?tipo=${habitacion.id}`} className="btn-reserva">
+              <button onClick={() => router.push(`/reservations/formulario?tipo=${habitacion.id}`)} className="btn-reserva">
                 Reservar Ahora
-              </Link>
+              </button>
             </div>
           </div>
         ))}
